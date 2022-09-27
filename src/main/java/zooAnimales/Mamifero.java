@@ -22,7 +22,7 @@ public class Mamifero extends Animal{
 		this(nombre, edad, habitat, genero, null, pelaje, patas);
 	}
 	public Mamifero() {
-		this(null,0, null,null,null,null,0);
+		this(null,0, null,null,null,false,0);
 	}
 	public ArrayList<Mamifero> getListado(){
 		return listado;
