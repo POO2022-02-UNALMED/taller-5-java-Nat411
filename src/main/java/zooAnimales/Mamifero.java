@@ -6,19 +6,16 @@ import gestion.Zona;
 
 public class Mamifero extends Animal{
 	private static ArrayList<Mamifero> listado = new ArrayList<Mamifero>();
-	public static int caballos;	public static int leones;
+	public static int caballos = 0;	
+	public static int leones = 0;
 	private boolean pelaje;
 	private int patas;
 	
 	public Mamifero(String nombre, int edad, String habitat, String genero, Zona zona, Boolean pelaje, int patas) {
+		super(nombre, edad,habitat,genero,zona);
 		totalAnimales ++;
-		cantidadMamiferos++;
-		this.nombre = nombre;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
-		this.zona = zona;
 		this.pelaje = pelaje;
+		this.patas = patas;
 		listado.add(this);
 	}
 	public Mamifero(String nombre, int edad, String habitat, String genero, Boolean pelaje, int patas) {
@@ -27,13 +24,10 @@ public class Mamifero extends Animal{
 	public Mamifero() {
 		this(null,0, null,null,null,null,0);
 	}
-	
-	public int getCaballos() {
-		return caballos;
+	public ArrayList<Mamifero> getListado(){
+		return listado;
 	}
-	public int getLeones() {
-		return leones;
-	}
+
 	
 	public boolean getPelaje() {
 		return pelaje;
@@ -49,8 +43,17 @@ public class Mamifero extends Animal{
 		this.patas = patas;
 	}
 	
-	public int cantidadMamiferos() {
+	public static int cantidadMamiferos() {
 		return listado.size();
+	}
+	
+	public void crearCaballo(String nombre, int edad, String genero) {
+		new Mamifero(nombre, edad,"pradera" , genero, null,  true, 4);
+		caballos++;
+	}
+	public void crearLeon(String nombre, int edad, String genero) {
+		new Mamifero(nombre, edad,"selva" , genero, null,  true, 4);
+		leones++;
 	}
 	
 }

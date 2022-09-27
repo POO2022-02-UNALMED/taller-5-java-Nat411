@@ -64,9 +64,9 @@ public class Animal {
 	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
-//	public String totalPorTipo() {
-//		
-//	}
+	public String totalPorTipo() {
+		return "Mamiferos: "+Mamifero.cantidadMamiferos()+"\nAves: "+Ave.cantidadAves()+"\nReptiles: "+Reptil.cantidadReptiles()+"\nPeces: "+Pez.cantidadPeces()+"\nAnfibios: "+ Anfibio.cantidadAnfibios();
+	}
 	@Override
 	public String toString() {
 		if (zona == null) {
